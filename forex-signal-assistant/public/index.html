@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Forex Signal Assistant — Hosted</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <style>
+    body{font-family:system-ui,Segoe UI,Roboto,Arial;background:#071024;color:#e6eef6;margin:0;padding:12px}
+    header{display:flex;gap:12px;align-items:center}
+    .tabs{display:flex;gap:8px}
+    button{padding:8px 10px;border-radius:8px;border:0;cursor:pointer}
+    .primary{background:#0d5bff;color:#fff} .muted{background:#132235;color:#9bb0c9}
+    textarea{width:100%;height:160px;border-radius:8px;padding:8px;border:1px solid #123;background:#021123;color:#dff}
+    .card{background:#071226;padding:12px;border-radius:10px;margin-top:12px}
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    th,td{border-bottom:1px solid #123;padding:6px;text-align:left}
+    .code{font-family:monospace;background:#021123;padding:8px;border-radius:8px;color:#9fd;white-space:pre-wrap}
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Forex Signal Assistant — Online</h2>
+    <div style="margin-left:auto" class="tabs">
+      <button id="btnDay" class="primary">Day</button>
+      <button id="btnSwing" class="muted">Swing</button>
+    </div>
+  </header>
+
+  <div class="card">
+    <label><b>Pair</b></label>
+    <select id="pair">
+      <option>EURUSD</option><option>GBPUSD</option><option>USDJPY</option><option>USDCHF</option>
+      <option>USDCAD</option><option>AUDUSD</option><option>NZDUSD</option>
+    </select>
+    <div style="margin-top:8px">
+      <button id="fetchLive" class="primary">Fetch Live (server)</button>
+      <button id="loadSample" class="muted">Load Sample</button>
+    </div>
+
+    <div style="margin-top:10px">
+      <label><b>Price CSV (if not using Fetch)</b></label>
+      <textarea id="csvArea" placeholder="time,open,high,low,close"></textarea>
+    </div>
+    <div style="margin-top:8px">
+      <label><b>Fundamentals JSON (optional)</b></label>
+      <textarea id="fundArea" placeholder='{"USD":{"rate":5.25,"cpiYoY":3.2,"unemp":4.1}}'></textarea>
+    </div>
+
+    <div style="margin-top:8px">
+      <button id="generate" class="primary">Generate Signal</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div id="snapshot" class="code">Snapshot will appear here.</div>
+    <div id="signal" style="margin-top:8px" class="code">Signal will appear here.</div>
+  </div>
+
+  <script src="/src/app.js"></script>
+</body>
+</html>

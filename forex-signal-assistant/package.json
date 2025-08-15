@@ -1,0 +1,11 @@
+{
+  "name": "forex-signal-assistant",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "netlify dev",
+    "start": "netlify dev"
+  },
+  "dependencies": {
+    "node-fetch": "^3.4.0"
+  }
+}
